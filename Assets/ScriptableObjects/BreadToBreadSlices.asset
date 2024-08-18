@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69aa1d6d7ed535468302e6aea7ffa37, type: 3}
+  m_Name: BreadToBreadSlices
+  m_EditorClassIdentifier: 
+  inObject: {fileID: 11400000, guid: 385b326992388e044af5d6cbcc59e6ea, type: 2}
+  outObject: {fileID: 11400000, guid: 2ae2797adccf0bc47942779410171835, type: 2}
