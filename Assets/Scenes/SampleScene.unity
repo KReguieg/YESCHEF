@@ -1221,6 +1221,7 @@ GameObject:
   - component: {fileID: 161900987}
   - component: {fileID: 161900989}
   - component: {fileID: 161900988}
+  - component: {fileID: 161900990}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -1302,6 +1303,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161900986}
   m_Enabled: 1
+--- !u!114 &161900990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161900986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db55d0332bbcaf34b8c9991c456dd6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkTransform: {fileID: 0}
 --- !u!1 &163490116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,98 +1695,6 @@ Transform:
   - {fileID: 1680878908}
   - {fileID: 283593573}
   m_Father: {fileID: 596825081}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &189106480
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 189106484}
-  - component: {fileID: 189106483}
-  - component: {fileID: 189106482}
-  - component: {fileID: 189106481}
-  m_Layer: 0
-  m_Name: '[BuildingBlock] Auto Matchmaking'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &189106481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189106480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba5764f4714bd64ab9efab127938e77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnableHotkeys: 0
-  BaseSkin: {fileID: 11400000, guid: e59b35dfeb4b6f54e9b2791b2a40a510, type: 2}
---- !u!114 &189106482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189106480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88230848386761045af440d808ee3efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunnerPrefab: {fileID: 453535452}
-  StartMode: 1
-  AutoStartAs: 2
-  AutoHideGUI: 1
-  AutoClients: 1
-  ClientStartDelay: 0.1
-  ServerPort: 0
-  DefaultRoomName: MultiplayerSession
-  InitialScenePath: 
-  _currentStage: 0
-  AutoConnectVirtualInstances: 1
-  VirtualInstanceConnectDelay: 1
---- !u!114 &189106483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189106480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockId: d45b4309-f823-42e4-b871-0f58e8e647d8
-  instanceId: 6156f162-e34d-4cee-aa93-b5c1842f275c
-  version: 1
-  installationRoutineCheckpoint:
-    _installationRoutineId: 6436b892-b7d4-4073-8113-00ab41af3be1
-    _installationVariants:
-    - _memberName: installAutoMatchmaking
-      _value: '{}'
---- !u!4 &189106484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189106480}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &191570998
 GameObject:
@@ -4604,6 +4526,7 @@ GameObject:
   - component: {fileID: 453535455}
   - component: {fileID: 453535454}
   - component: {fileID: 453535453}
+  - component: {fileID: 453535458}
   m_Layer: 0
   m_Name: '[BuildingBlock] Network Manager'
   m_TagString: Untagged
@@ -4752,6 +4675,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453535458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453535451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbfc558d1f629447a9f5eb51c1ef33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMode: 2
+  roomName: SampleFusion
+  connectOnStart: 1
+  playerCount: 0
+  connectionCriterias: 1
+  additionalSessionProperties: []
+  runner: {fileID: 453535452}
+  userPrefab: {fileID: 1194134944421754855, guid: 9f00f365c0798cf43bddfe99246a7e3a, type: 3}
+  loadSceneMode: 1
+  onWillConnect:
+    m_PersistentCalls:
+      m_Calls: []
+  actualSessionProperties: []
 --- !u!1 &460288041
 GameObject:
   m_ObjectHideFlags: 0
@@ -14384,6 +14332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1362944247}
+  - component: {fileID: 1362944248}
   m_Layer: 0
   m_Name: RightHandAnchor
   m_TagString: Untagged
@@ -14409,6 +14358,33 @@ Transform:
   - {fileID: 628468603}
   m_Father: {fileID: 1356687924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1362944248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362944246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a719240af71ff8a45995767ae4176d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  side: 3
+  handCommand:
+    thumbTouchedCommand: 0
+    indexTouchedCommand: 0
+    gripCommand: 0
+    triggerCommand: 0
+    poseCommand: 0
+    pinchCommand: 0
+  isGrabbing: 0
+  referenceTransforms: []
+  handPose: 0
+  grabThreshold: 0.5
+  updateHandCommandWithAction: 1
+  updateGrabWithAction: 1
+  networkTransform: {fileID: 0}
 --- !u!1 &1365547749
 GameObject:
   m_ObjectHideFlags: 0
@@ -18539,6 +18515,7 @@ GameObject:
   - component: {fileID: 1799783814}
   - component: {fileID: 1799783813}
   - component: {fileID: 1799783812}
+  - component: {fileID: 1799783817}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -18689,6 +18666,24 @@ Transform:
   - {fileID: 1202291718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1799783817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799783811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b5f178f3908404394369ff6c39b719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 1970049254}
+  rightHand: {fileID: 1362944248}
+  headset: {fileID: 161900990}
+  onTeleport:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1801271967
 GameObject:
   m_ObjectHideFlags: 0
@@ -19935,6 +19930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1970049253}
+  - component: {fileID: 1970049254}
   m_Layer: 0
   m_Name: LeftHandAnchor
   m_TagString: Untagged
@@ -19960,6 +19956,33 @@ Transform:
   - {fileID: 2127919072}
   m_Father: {fileID: 1356687924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1970049254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970049252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a719240af71ff8a45995767ae4176d67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  side: 2
+  handCommand:
+    thumbTouchedCommand: 0
+    indexTouchedCommand: 0
+    gripCommand: 0
+    triggerCommand: 0
+    poseCommand: 0
+    pinchCommand: 0
+  isGrabbing: 0
+  referenceTransforms: []
+  handPose: 0
+  grabThreshold: 0.5
+  updateHandCommandWithAction: 1
+  updateGrabWithAction: 1
+  networkTransform: {fileID: 0}
 --- !u!1 &1976378457
 GameObject:
   m_ObjectHideFlags: 0
@@ -21994,7 +22017,6 @@ SceneRoots:
   - {fileID: 670391484}
   - {fileID: 757308267}
   - {fileID: 453535457}
-  - {fileID: 189106484}
   - {fileID: 1412157170}
   - {fileID: 777887388}
   - {fileID: 518903022}
