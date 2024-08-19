@@ -15280,6 +15280,7 @@ Transform:
   - {fileID: 8872905649677566963}
   - {fileID: 4158307845561988479}
   - {fileID: 5440008492771181436}
+  - {fileID: 2394099846591992700}
   - {fileID: 8367133141914662174}
   - {fileID: 5267331334547521692}
   - {fileID: 5691440738455049913}
@@ -38760,6 +38761,72 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &2304194101085406801
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3098984510948253731}
+    m_Modifications:
+    - target: {fileID: 322516300665424543, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: _ingredient
+      value: 
+      objectReference: {fileID: 11400000, guid: c6c2425f184414044ae3d3b03677b2ad, type: 2}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82055753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908410740812753866, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_Name
+      value: Chicken Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+--- !u!4 &2394099846591992700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+  m_PrefabInstance: {fileID: 2304194101085406801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2787087430294116671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38929,6 +38996,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3098984510948253731}
     m_Modifications:
+    - target: {fileID: 322516300665424543, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: _ingredient
+      value: 
+      objectReference: {fileID: 11400000, guid: 5766bf8e744d98d46882cfedd4f1c3d5, type: 2}
     - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.55
@@ -38971,7 +39042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908410740812753866, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_Name
-      value: Ingredient Spawner
+      value: Potato Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
