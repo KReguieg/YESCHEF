@@ -6,6 +6,7 @@ using UnityEngine;
 public class CuttingRecipeScrtipableObject : ScriptableObject
 {
     public KitchenObjectScriptableObject inObject;
+    public KitchenObjectScriptableObject processedObject;
+
     public KitchenObjectScriptableObject outObject;
-    
 }
