@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6072149ba19b44c91da4fb526043a6, type: 3}
   m_Name: BreadSlicesKitchenSO
   m_EditorClassIdentifier: 
-  prefab: {fileID: 900457007764186450, guid: 379d60405045855409e31e870effe2c0, type: 3}
+  prefab: {fileID: 7455213427990135264, guid: 379d60405045855409e31e870effe2c0, type: 3}
   objectName: BreadSlices

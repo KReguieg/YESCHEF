@@ -1,8 +1,13 @@
+using Fusion;
 using UnityEngine;
 
-public class KitchenObject : MonoBehaviour
+public class KitchenObject : NetworkBehaviour
 {
-    [SerializeField] private KitchenObjectScriptableObject _kitchenObjectSO;
+	[SerializeField] private KitchenObjectScriptableObject _kitchenObjectSO;
 
-    public KitchenObjectScriptableObject KitchenObjectSo => _kitchenObjectSO;
+	public KitchenObjectScriptableObject KitchenObjectSo => _kitchenObjectSO;
+
+	//public void Init()
+	//{
+	//}
 }

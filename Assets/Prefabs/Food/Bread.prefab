@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4337576850249728240}
-  - component: {fileID: 6331650937219547600}
   - component: {fileID: 5944977810401818855}
+  - component: {fileID: 6331650937219547600}
+  - component: {fileID: 4156009808719573860}
   m_Layer: 0
   m_Name: Bread
   m_TagString: Untagged
@@ -34,19 +35,6 @@ Transform:
   - {fileID: 5041955047698635550}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6331650937219547600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4590060352956647279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33ddc01862aa37c4da6dac1f779f6b58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _kitchenObjectSO: {fileID: 11400000, guid: 385b326992388e044af5d6cbcc59e6ea, type: 2}
 --- !u!114 &5944977810401818855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +51,38 @@ MonoBehaviour:
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 6331650937219547600}
+  - {fileID: 4156009808719573860}
+--- !u!114 &6331650937219547600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590060352956647279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ddc01862aa37c4da6dac1f779f6b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _kitchenObjectSO: {fileID: 11400000, guid: 385b326992388e044af5d6cbcc59e6ea, type: 2}
+--- !u!114 &4156009808719573860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590060352956647279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1001 &1031358755533278019
 PrefabInstance:
   m_ObjectHideFlags: 0
