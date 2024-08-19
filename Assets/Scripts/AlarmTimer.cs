@@ -19,7 +19,6 @@ public class AlarmTimer : MonoBehaviour
 		game_ended = false;
 		step_angle = angle_to_rotate / time_to_rotate_in_seconds;
 		timer = 0;
-		startTimer();
 	}
 
 	// Update is called once per frame
@@ -32,14 +31,11 @@ public class AlarmTimer : MonoBehaviour
 		}
 		if (timer >= time_to_rotate_in_seconds)
 		{
-			stopTimer();
+			StopTimer();
 			scoreBehaviour.AddScore();
 			scoreBehaviour.StopScore();
+			transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
 		}
-		//if (timer >= time_to_rotate_in_seconds/3)  //doesn't work
-		//{
-		//	scoreBehaviour.StopScore();
-		//}
 
 		if (alarm_timer_activated == true)
 		{
@@ -47,7 +43,7 @@ public class AlarmTimer : MonoBehaviour
 		}
 	}
 
-	public void stopTimer()
+	public void StopTimer()
 	{
 		alarm_timer_activated = false;
 		timer = 0;
@@ -57,7 +53,7 @@ public class AlarmTimer : MonoBehaviour
 		//play ring sound
 	}
 
-	public void startTimer()
+	public void StartTimer()
 	{
 		if (alarm_timer_activated == false && game_ended == false)
 		{

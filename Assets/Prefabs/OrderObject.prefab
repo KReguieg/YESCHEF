@@ -158,6 +158,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 162135079015506227}
+  - {fileID: 4924960376541789843}
   - {fileID: 5024325377403717847}
 --- !u!114 &162135079015506227
 MonoBehaviour:
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orderText: {fileID: 2721388479457687503}
+  _orderNumber: 0
 --- !u!114 &1124228903390877281
 MonoBehaviour:
   m_ObjectHideFlags: 0

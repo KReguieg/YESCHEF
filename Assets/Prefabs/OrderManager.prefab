@@ -68,5 +68,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c005688b77446d24cb61ed390a4e7440, type: 2}
   - {fileID: 11400000, guid: f4e265794c6a1aa408f7b49899bb5667, type: 2}
   _orders: []
-  orderLimit: 3
+  _orderTransforms: []
+  _orderLimit: 3
   _orderPrefab: {fileID: 3893014566287037541, guid: 993b0b4ee581b974fb2462ee308bad0a, type: 3}
+  randomOrderPick: 0
+  spawned: 0
+  hasStateAuthority: 0
