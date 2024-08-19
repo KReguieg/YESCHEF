@@ -1,13 +1,27 @@
+using Oculus.Interaction;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CookingTimer : MonoBehaviour
 {
 	private bool cookingStarted;
 	private float currentCookingTime;
 	private float cookingInterval;
+	[SerializeField] private SnapInteractable snapInteractable;
+	public UnityEvent OnCookingFinished;
+
+	private void OnEnable()
+	{
+		snapInteractable.WhenSelectingInteractorViewAdded += HandleSelectingInteractorViewAdded;
+	}
+
+	private void HandleSelectingInteractorViewAdded(IInteractorView interactorView)
+	{
+		StartCookingTimer();
+	}
 
 	private void Start()
 	{
@@ -34,7 +48,7 @@ public class CookingTimer : MonoBehaviour
 	public void FinishFoodCooking()
 	{
 		cookingStarted = false;
-		//Invoke(); //call ashray's function to change state of food;
+		OnCookingFinished.Invoke();
 	}
 
 	public void StartCookingTimer()

@@ -14838,7 +14838,67 @@ MonoBehaviour:
     pinchCommand: 0
   isGrabbing: 0
   referenceTransforms: []
+  thumbAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6e3f053b-1833-4c4a-9700-0bbe76b3a840
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  gripAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 02e76bad-8ff3-4dda-bd70-ffbce94fcd32
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  triggerAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d69a9d02-82e7-49ba-9a58-f4c465d56450
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  indexAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b1e888ce-03d4-47ff-8726-527d1fb8ce41
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   handPose: 0
+  grabAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d1b3f484-576f-462e-92a9-9fb98cdf8eae
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   grabThreshold: 0.5
   updateHandCommandWithAction: 1
   updateGrabWithAction: 1
@@ -20406,7 +20466,67 @@ MonoBehaviour:
     pinchCommand: 0
   isGrabbing: 0
   referenceTransforms: []
+  thumbAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 754806ae-b745-4e0f-a54d-c80b6f33ed71
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  gripAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6c286ab4-d1c5-4968-8cca-187d67b73be7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  triggerAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: c9719933-467f-44a0-94de-b5f0f047675f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  indexAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 93f7ef4f-292d-4986-8d6d-9f18ba80cbec
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   handPose: 0
+  grabAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a0212e23-c306-43be-9852-062f11dc190b
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   grabThreshold: 0.5
   updateHandCommandWithAction: 1
   updateGrabWithAction: 1
@@ -22481,5 +22601,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7614578395576702289, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 161900988}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
