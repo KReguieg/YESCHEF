@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3733469713604377537}
   - component: {fileID: 8168883674402300983}
   - component: {fileID: -4906111651625619661}
+  - component: {fileID: -5275117599041537442}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -61,9 +62,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 386304803
   ObjectInterest: 1
-  Flags: 1
+  Flags: 262145
   NestedObjects: []
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 8168883674402300983}
+  - {fileID: -5275117599041537442}
+--- !u!114 &-5275117599041537442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311542442087276193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1001 &7606736303868863878
 PrefabInstance:
   m_ObjectHideFlags: 0
