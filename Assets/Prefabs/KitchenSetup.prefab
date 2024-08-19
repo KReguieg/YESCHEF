@@ -15477,7 +15477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2437564047578636118}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06278395, y: -0.00000041723246, z: 0.0000016652045, w: 0.99802715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.027310014, y: 0.12901002, z: 0.456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16831,7 +16831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerActive: 0
-  startSeconds: 2
+  startSeconds: 0
   currentTimeText: {fileID: 8109672665090361200}
   alarmTimer: {fileID: 2197303223072654741}
 --- !u!1 &4163448708649521202
@@ -22062,7 +22062,7 @@ Transform:
   m_GameObject: {fileID: 4546692393091860165}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: -0.508}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22221,7 +22221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 8888
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9193b8bd6096ada4aba23eb53e2b912c, type: 2}
   m_sharedMaterial: {fileID: -2227936842534967095, guid: 9193b8bd6096ada4aba23eb53e2b912c, type: 2}
@@ -38552,8 +38552,8 @@ Transform:
   m_GameObject: {fileID: 9079993857999826440}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 2, z: 0}
-  m_LocalScale: {x: 2, y: 0.3, z: 2}
+  m_LocalPosition: {x: 0.5, y: 1.8, z: 0}
+  m_LocalScale: {x: 2, y: 0.7, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7402033549472107401}
