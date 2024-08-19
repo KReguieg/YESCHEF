@@ -16722,11 +16722,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3909758077055279383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1953d46f87b46614d88a8d44c527983d, type: 3}
+  m_Script: {fileID: 11500000, guid: b95eb4533f40ae142b8bf66b5ac2f9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   score_active: 0
-  current_score: 10
+  current_score: 0
   start_score: 0
   score_per_shot: 10
   currentScoreText:
