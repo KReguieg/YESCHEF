@@ -15,18 +15,24 @@ public class OrderManager : NetworkBehaviour
     [SerializeField] private GameObject _orderPrefab;
     [SerializeField] private int orderNumber;
     public bool spawned = false;
+    public bool hasStateAuthority;
 
 
     public override void Spawned()
     {
-        base.Spawned();
-        Debug.Log("OrderManager started. Creating orders.");
-        for (var i = 0; i < orderLimit; i++)
+        hasStateAuthority = HasStateAuthority;
+        
+        if (HasStateAuthority)
         {
-            PlaceOrder();
-        }
+            base.Spawned();
+            Debug.Log("OrderManager started. Creating orders.");
+            for (var i = 0; i < orderLimit; i++)
+            {
+                PlaceOrder();
+            }
 
-        spawned = true;
+            spawned = true;
+        }
     }
 
     private void Update()
@@ -52,27 +58,33 @@ public class OrderManager : NetworkBehaviour
 
     public void PlaceOrder()
     {
-        orderNumber = Random.Range(0, 3);
-        string orderString = "";
-        foreach (var obj in _possibleOrders[orderNumber].order)
+        if (HasStateAuthority)
         {
-            orderString += obj.objectName + "\n";
-        }
+            orderNumber = Random.Range(0, 3);
+            string orderString = "";
+            foreach (var obj in _possibleOrders[orderNumber].order)
+            {
+                orderString += obj.objectName + "\n";
+            }
 
-        var networkObject = Runner.Spawn
-        (
-            _orderPrefab,
-            Vector3.zero,
-            Quaternion.identity,
-            inputAuthority: null,
-            (Runner, NO) => NO.GetComponent<OrderObject>().Init(orderString)
-        );
-        _orders.Add(networkObject);
+            var networkObject = Runner.Spawn
+            (
+                _orderPrefab,
+                Vector3.zero,
+                Quaternion.identity,
+                inputAuthority: null,
+                (Runner, NO) => NO.GetComponent<OrderObject>().Init(orderString)
+            );
+            _orders.Add(networkObject);
+        }
     }
 
     public void ResolveOrder(NetworkObject order)
     {
-        Runner.Despawn(order);
-        _orders.Remove(order);
+        if (HasStateAuthority)
+        {
+            Runner.Despawn(order);
+            _orders.Remove(order);
+        }
     }
 }
