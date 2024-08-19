@@ -29,9 +29,8 @@ public class Timer : MonoBehaviour
 
 		currentTime = currentTime - Time.fixedDeltaTime;
 		time = TimeSpan.FromSeconds(currentTime);
-		fixFormat();
+		FixFormat();
 		currentTimeText.text = minutes_text + ":" + seconds_text;
-		StartTimer();
 	}
 
 	private void Update()
@@ -45,7 +44,7 @@ public class Timer : MonoBehaviour
 		{
 			currentTime = currentTime - Time.fixedDeltaTime;
 			time = TimeSpan.FromSeconds(currentTime);
-			fixFormat();
+			FixFormat();
 			currentTimeText.text = minutes_text + ":" + seconds_text;
 		}
 
@@ -58,6 +57,7 @@ public class Timer : MonoBehaviour
 	public void StartTimer()
 	{
 		timerActive = true;
+		alarmTimer.StartTimer();
 	}
 
 	public void StopTimer()
@@ -65,7 +65,7 @@ public class Timer : MonoBehaviour
 		timerActive = false;
 	}
 
-	public void fixFormat()
+	public void FixFormat()
 	{
 		if (time.Minutes < 10)
 		{
