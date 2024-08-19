@@ -1,19 +1,44 @@
+using Fusion;
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-public class OrderObject : MonoBehaviour
+
+public class OrderObject : NetworkBehaviour
 {
+    
+    [Networked, OnChangedRender(nameof(OnTextChanged))]
+    public NetworkString<_16> OrderTextValue { get; set; }
+    
     [SerializeField] private TMP_Text _orderText;
+    [SerializeField] private int _orderNumber;
 
+    
     public TMP_Text OrderText
     {
         get => _orderText;
         set => _orderText = value;
     }
 
-    public void Init(string orderText)
+    public int OrderNumber
     {
-        _orderText.text = orderText;
+        get => _orderNumber;
+        set => _orderNumber = value;
+    }
+
+    public void Init(string orderText, int orderNumber)
+    {
+        OrderTextValue = orderText;
+        _orderNumber = orderNumber;
+    }
+
+    public override void Spawned()
+    {
+        base.Spawned();
+        OnTextChanged();
+    }
+
+    private void OnTextChanged()
+    {
+        _orderText.text = OrderTextValue.Value;
     }
 }

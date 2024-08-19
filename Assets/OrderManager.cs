@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Fusion;
-using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,69 +9,96 @@ public class OrderManager : NetworkBehaviour
 {
     [SerializeField] private OrderRecipeScriptableObject[] _possibleOrders;
     [SerializeField] private List<NetworkObject> _orders;
+    [SerializeField] private Transform[] _orderTransforms;
 
-    [SerializeField] private int orderLimit;
+    [SerializeField] private int _orderLimit;
     [SerializeField] private GameObject _orderPrefab;
-    [SerializeField] private int orderNumber;
+    [SerializeField] private int randomOrderPick;
     public bool spawned = false;
+    public bool hasStateAuthority;
 
 
     public override void Spawned()
     {
-        base.Spawned();
-        Debug.Log("OrderManager started. Creating orders.");
-        for (var i = 0; i < orderLimit; i++)
-        {
-            PlaceOrder();
-        }
+        hasStateAuthority = HasStateAuthority;
 
-        spawned = true;
+        if (HasStateAuthority)
+        {
+            base.Spawned();
+            Debug.Log("OrderManager started. Creating orders.");
+            for (var i = 0; i < _orderLimit; i++)
+            {
+                PlaceOrder(i);
+            }
+
+            spawned = true;
+        }
     }
 
     private void Update()
     {
         if (spawned)
         {
-            if (_orders.Count < orderLimit)
+            if (_orders.Count < _orderLimit)
             {
-                PlaceOrder();
+                PlaceOrder(GetEmptyOrderSlots());
             }
 
             if (Input.GetKeyDown(KeyCode.P))
             {
-                PlaceOrder();
+                PlaceOrder(GetEmptyOrderSlots());
             }
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                ResolveOrder(_orders[^1]);
+                ResolveOrder(_orders[^2]);
             }
         }
     }
 
-    public void PlaceOrder()
+    public int GetEmptyOrderSlots()
     {
-        orderNumber = Random.Range(0, 3);
-        string orderString = "";
-        foreach (var obj in _possibleOrders[orderNumber].order)
+        for (var i = 0; i < _orders.Count; i++)
         {
-            orderString += obj.objectName + "\n";
+            if (_orders[i] == null)
+                return i;
         }
 
-        var networkObject = Runner.Spawn
-        (
-            _orderPrefab,
-            Vector3.zero,
-            Quaternion.identity,
-            inputAuthority: null,
-            (Runner, NO) => NO.GetComponent<OrderObject>().Init(orderString)
-        );
-        _orders.Add(networkObject);
+        return 0;
+    }
+
+    public void PlaceOrder(int orderPositionNumber)
+    {
+        if (Object.HasStateAuthority)
+        {
+            Debug.Log(orderPositionNumber);
+            randomOrderPick = Random.Range(0, 3);
+            string orderString = "";
+            foreach (var obj in _possibleOrders[randomOrderPick].order)
+            {
+                orderString += obj.objectName + "\n";
+            }
+
+            var orderPos = _orderTransforms[orderPositionNumber].position;
+            _orders.Add(
+                Runner.Spawn
+                (
+                    _orderPrefab,
+                    orderPos,
+                    Quaternion.identity,
+                    inputAuthority: null,
+                    (Runner, NO) => NO.GetComponent<OrderObject>().Init(orderString, orderPositionNumber)
+                )
+            );
+        }
     }
 
     public void ResolveOrder(NetworkObject order)
     {
-        Runner.Despawn(order);
-        _orders.Remove(order);
+        if (HasStateAuthority)
+        {
+            Runner.Despawn(order);
+            _orders[order.GetComponent<OrderObject>().OrderNumber] = null;
+        }
     }
 }
