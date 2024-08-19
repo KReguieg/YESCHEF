@@ -135,7 +135,7 @@ public class SnappingLogic : NetworkBehaviour
 			foodObjects[0].gameObject.SetActive(false);
 			foodObjects[1].gameObject.SetActive(true);
 		}
-		else
+		else if (state == FoodState.CHOPPED)
 		{
 			foodObjects[1].gameObject.SetActive(false);
 			foodObjects[2].gameObject.SetActive(true);

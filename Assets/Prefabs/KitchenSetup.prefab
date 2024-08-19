@@ -15213,6 +15213,7 @@ Transform:
   - {fileID: 5267331334547521692}
   - {fileID: 5440008492771181436}
   - {fileID: 7004785470652833174}
+  - {fileID: 9041334290299618160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39089,6 +39090,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2503975501431936283, guid: 7431fa7152c3ab34ea6123cfa7557a23, type: 3}
   m_PrefabInstance: {fileID: 4866727870090037389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4880473531362563677
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3098984510948253731}
+    m_Modifications:
+    - target: {fileID: 322516300665424543, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: _ingredient
+      value: 
+      objectReference: {fileID: 11400000, guid: 5766bf8e744d98d46882cfedd4f1c3d5, type: 2}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.652
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908410740812753866, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: m_Name
+      value: Potato Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295894422115245772, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: SortKey
+      value: 2428577624
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+--- !u!4 &9041334290299618160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+  m_PrefabInstance: {fileID: 4880473531362563677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5523812811336698093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39302,21 +39373,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3098984510948253731}
     m_Modifications:
+    - target: {fileID: 322516300665424543, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
+      propertyPath: _ingredient
+      value: 
+      objectReference: {fileID: 11400000, guid: c6c2425f184414044ae3d3b03677b2ad, type: 2}
     - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.55
+      value: -1.928
       objectReference: {fileID: 0}
     - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.82055753
+      value: 0.652
       objectReference: {fileID: 0}
     - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6
+      value: -0.475
       objectReference: {fileID: 0}
     - target: {fileID: 4522644766094120237, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39348,7 +39423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908410740812753866, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: m_Name
-      value: Ingredient Spawner
+      value: Chicken Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 8295894422115245772, guid: 9f5b925e3a33711478827d9c0ae3cbd6, type: 3}
       propertyPath: SortKey
