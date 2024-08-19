@@ -1,13 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+
 #if ENABLE_INPUT_SYSTEM
+
 using UnityEngine.InputSystem;
+
 #endif
+
 using UnityEngine.XR;
 
 namespace Fusion.XR.Shared.Rig
 {
-    // Structure representing the inputs driving a hand pose 
+    // Structure representing the inputs driving a hand pose
     [System.Serializable]
     public struct HandCommand : INetworkStruct
     {
@@ -15,16 +19,18 @@ namespace Fusion.XR.Shared.Rig
         public float indexTouchedCommand;
         public float gripCommand;
         public float triggerCommand;
+
         // Optionnal commands
         public int poseCommand;
+
         public float pinchCommand;// Can be computed from triggerCommand by default
     }
 
     /**
-     * 
+     *
      * Hand class for the hardware rig.
      * Handles collecting the input for the hand pose, and the hand interactions
-     * 
+     *
      **/
 
     public class HardwareHand : MonoBehaviour
@@ -37,8 +43,10 @@ namespace Fusion.XR.Shared.Rig
         public List<Transform> referenceTransforms = new List<Transform>();
 
 #if ENABLE_INPUT_SYSTEM
+
         [Header("Hand pose input")]
         public InputActionProperty thumbAction;
+
         public InputActionProperty gripAction;
         public InputActionProperty triggerAction;
         public InputActionProperty indexAction;
@@ -46,25 +54,28 @@ namespace Fusion.XR.Shared.Rig
         public int handPose = 0;
 
         [Header("Hand interaction input")]
-#if ENABLE_INPUT_SYSTEM
         public InputActionProperty grabAction;
-#endif
+
+        //#endif
         public float grabThreshold = 0.5f;
+
         public bool updateHandCommandWithAction = true;
+
         //False for Desktop mode, true for VR mode: when the hand grab is triggered by other scripts (MouseTeleport in desktop mode), we do not want to update the isGrabbing. It should only be done in VR mode
         public bool updateGrabWithAction = true;
+
         public NetworkTransform networkTransform;
         public IHandRepresentation localRepresentation;
 
         private void Awake()
         {
 #if ENABLE_INPUT_SYSTEM
-            thumbAction.EnableWithDefaultXRBindings(side: side, new List<string> { "thumbstickTouched", "primaryTouched", "secondaryTouched" });
-            gripAction.EnableWithDefaultXRBindings(side: side, new List<string> { "grip" });
-            triggerAction.EnableWithDefaultXRBindings(side: side, new List<string> { "trigger" });
-            indexAction.EnableWithDefaultXRBindings(side: side, new List<string> { "triggerTouched" });
-            // We separate the hand grip action and the grab interaction action, as we may want to use different action for some hardware
-            grabAction.EnableWithDefaultXRBindings(side: side, new List<string> { "grip" });
+            //thumbAction.EnableWithDefaultXRBindings(side: side, new List<string> { "thumbstickTouched", "primaryTouched", "secondaryTouched" });
+            //gripAction.EnableWithDefaultXRBindings(side: side, new List<string> { "grip" });
+            //triggerAction.EnableWithDefaultXRBindings(side: side, new List<string> { "trigger" });
+            //indexAction.EnableWithDefaultXRBindings(side: side, new List<string> { "triggerTouched" });
+            //// We separate the hand grip action and the grab interaction action, as we may want to use different action for some hardware
+            //grabAction.EnableWithDefaultXRBindings(side: side, new List<string> { "grip" });
 #else
             Debug.LogError("Missing com.unity.inputsystem package");
 #endif
@@ -76,7 +87,7 @@ namespace Fusion.XR.Shared.Rig
         protected virtual void Update()
         {
             int i = 0;
-            foreach(Transform referenceTransform in referenceTransforms)
+            foreach (Transform referenceTransform in referenceTransforms)
             {
                 if (referenceTransform.gameObject.activeInHierarchy)
                 {
@@ -113,6 +124,7 @@ namespace Fusion.XR.Shared.Rig
         }
 
         #region Haptic feedback (vibrations)
+
         private UnityEngine.XR.InputDevice? _device = null;
         private bool supportImpulse = false;
 
@@ -169,7 +181,7 @@ namespace Fusion.XR.Shared.Rig
                 }
             }
         }
-        #endregion
 
+        #endregion Haptic feedback (vibrations)
     }
 }
