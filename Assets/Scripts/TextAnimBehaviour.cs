@@ -24,5 +24,6 @@ public class TextAnimBehaviour : MonoBehaviour
 		GameObject exhale_text = Instantiate(text_anim_elements[0].prefab_to_instantiate, text_anim_elements[0].transform);
 		//destroy after 1.5 sec
 		Destroy(exhale_text, 1.5f);
+		Destroy(gameObject, 2.0f);
 	}
 }
