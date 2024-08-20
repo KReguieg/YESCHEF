@@ -29,6 +29,7 @@ public class KitchedSpawner : NetworkBehaviour
                 Debug.Log("<<< New kit pos room" + newKitchenObj.transform.localPosition);
 
                 newGhostKitchenObj.SetActive(false);
+                this.gameObject.SetActive(false);
             }
         }
     }

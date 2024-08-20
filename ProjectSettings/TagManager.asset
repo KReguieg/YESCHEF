@@ -9,6 +9,7 @@ TagManager:
   - Chicken
   - Potato
   - Cut
+  - Plate
   layers:
   - Default
   - TransparentFX

@@ -93,6 +93,7 @@ public class ColocationStatus : MonoBehaviour
         {
             Debug.Log($"<<<<< Loaded the spatial anchor.");
             _textMeshPro.text = "Loaded the spatial anchor";
+            this.gameObject.SetActive(false);
         }
         if (loadedAnchors == null || loadedAnchors.Count == 0)
         {

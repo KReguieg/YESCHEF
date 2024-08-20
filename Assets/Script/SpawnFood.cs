@@ -60,8 +60,11 @@ public class SpawnFood : NetworkBehaviour
     [ContextMenu("Spawn Food")]
     public void SpawnFoodObject()
     {
+        Debug.Log("<<< Spawned food item");
+
         if (noCoolDown && noExitingBall)
         {
+            Debug.Log("<<< Spawned food item");
             NetworkObject newChicken = Runner.Spawn(_ingredient.prefab, transform.position, Quaternion.identity);
             _spawnedIngredients.Add(newChicken);
             noCoolDown = false;
@@ -70,11 +73,12 @@ public class SpawnFood : NetworkBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(_ingredient.objectName))
+        Debug.Log("<< ON trigger exit");
+        if (other.CompareTag("Chicken") || other.CompareTag("Potato") || other.CompareTag("Plate"))
         {
-            SpawnFoodObject();
+            Debug.Log("<< ON trigger exit" + _ingredient.objectName.ToString());
 
-            numberOfBallsInSpawner--;
+            SpawnFoodObject();
         }
     }
 }
