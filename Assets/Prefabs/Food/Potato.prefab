@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 354926808341215067}
   m_Layer: 0
   m_Name: Potato
-  m_TagString: Untagged
+  m_TagString: Potato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   onFried:
     m_PersistentCalls:
       m_Calls: []
+  state: 0
   _Counter: 0
 --- !u!54 &4511885282788805733
 Rigidbody:
