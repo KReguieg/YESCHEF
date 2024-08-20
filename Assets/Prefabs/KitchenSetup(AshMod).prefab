@@ -15411,6 +15411,7 @@ MonoBehaviour:
   - {fileID: 4441274576100064902}
   NetworkedBehaviours:
   - {fileID: 8103566883890552272}
+  - {fileID: 8127720386559061885}
   - {fileID: 8197867750455139534}
 --- !u!114 &8103566883890552272
 MonoBehaviour:

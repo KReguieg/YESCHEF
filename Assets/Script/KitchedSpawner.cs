@@ -1,6 +1,5 @@
 using Fusion;
 using Meta.XR.BuildingBlocks;
-using Meta.XR.MRUtilityKit;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -61,8 +60,7 @@ public class KitchedSpawner : NetworkBehaviour
         else
         {
             spatialAnchor = FindAnyObjectByType<OVRSpatialAnchor>();
-            var floor = MRUK.Instance?.GetCurrentRoom()?.FloorAnchor;
-            newGhostKitchenObj = Instantiate(ghostkitchenGamePre, floor.transform.position, Quaternion.identity);
+            newGhostKitchenObj = Instantiate(ghostkitchenGamePre, transform.position, Quaternion.identity);
             newGhostKitchenObj.transform.parent = spatialAnchor.transform;
 
             Debug.Log($"<<<<< Created the ghost room.");

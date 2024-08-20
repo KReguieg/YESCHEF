@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6072149ba19b44c91da4fb526043a6, type: 3}
   m_Name: ChickenKitchenSO
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3311542442087276193, guid: 6b813ead35274f24588f568dd8e4022e, type: 3}
+  prefab: {fileID: 3492987824723189597, guid: 6e7e685d1a88bea47b94707a3d567ba0, type: 3}
   objectName: Chicken
