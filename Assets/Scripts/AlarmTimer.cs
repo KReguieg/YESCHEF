@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,14 +12,18 @@ public class AlarmTimer : MonoBehaviour
 	public float timer;
 	public ParticleSystem particle;
 	public ScoreBehaviour scoreBehaviour;
+	private AudioTrigger audioTrigger;
+	private AudioSource audioSource;
 
 	// Start is called before the first frame update
 	private void Start()
 	{
+		audioTrigger = GetComponent<AudioTrigger>();
 		alarm_timer_activated = false;
 		game_ended = false;
 		step_angle = angle_to_rotate / time_to_rotate_in_seconds;
 		timer = 0;
+		audioSource = audioTrigger.GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -50,7 +55,7 @@ public class AlarmTimer : MonoBehaviour
 		game_ended = true;
 		particle.Play();
 
-		//play ring sound
+		audioSource.pitch = 0f; //stops audio
 	}
 
 	public void StartTimer()
@@ -58,6 +63,7 @@ public class AlarmTimer : MonoBehaviour
 		if (alarm_timer_activated == false && game_ended == false)
 		{
 			alarm_timer_activated = true;
+			audioTrigger.PlayAudio();
 		}
 	}
 
