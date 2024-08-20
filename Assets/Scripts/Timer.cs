@@ -4,84 +4,96 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Fusion;
 
-public class Timer : MonoBehaviour
+public class Timer : NetworkBehaviour
 {
-	public bool timerActive;
-	private float currentTime;
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_StartTimer()
+    {
+        StartTimer();
+    }
 
-	[SerializeField]
-	private int startSeconds;
+    public void CallTimerRPC()
+    {
+        RPC_StartTimer();
+    }
 
-	public TMP_Text currentTimeText;
-	private TimeSpan time;
+    public bool timerActive;
+    private float currentTime;
 
-	private string minutes_text, seconds_text;
+    [SerializeField]
+    private int startSeconds;
 
-	public AlarmTimer alarmTimer;
+    public TMP_Text currentTimeText;
+    private TimeSpan time;
 
-	private void Start()
-	{
-		startSeconds = alarmTimer.time_to_rotate_in_seconds;
-		timerActive = false;
-		//currentTimeText.text = "";
-		currentTime = startSeconds + 1;
+    private string minutes_text, seconds_text;
 
-		currentTime = currentTime - Time.fixedDeltaTime;
-		time = TimeSpan.FromSeconds(currentTime);
-		FixFormat();
-		currentTimeText.text = minutes_text + ":" + seconds_text;
-	}
+    public AlarmTimer alarmTimer;
 
-	private void Update()
-	{
-		timerActive = alarmTimer.alarm_timer_activated;
-	}
+    private void Start()
+    {
+        startSeconds = alarmTimer.time_to_rotate_in_seconds;
+        timerActive = false;
+        //currentTimeText.text = "";
+        currentTime = startSeconds + 1;
 
-	private void FixedUpdate()
-	{
-		if (timerActive == true)
-		{
-			currentTime = currentTime - Time.fixedDeltaTime;
-			time = TimeSpan.FromSeconds(currentTime);
-			FixFormat();
-			currentTimeText.text = minutes_text + ":" + seconds_text;
-		}
+        currentTime = currentTime - Time.fixedDeltaTime;
+        time = TimeSpan.FromSeconds(currentTime);
+        FixFormat();
+        currentTimeText.text = minutes_text + ":" + seconds_text;
+    }
 
-		if (alarmTimer.game_ended == true)
-		{
-			currentTimeText.text = "00:00";
-		}
-	}
+    private void Update()
+    {
+        timerActive = alarmTimer.alarm_timer_activated;
+    }
 
-	public void StartTimer()
-	{
-		timerActive = true;
-		alarmTimer.StartTimer();
-	}
+    private void FixedUpdate()
+    {
+        if (timerActive == true)
+        {
+            currentTime = currentTime - Time.fixedDeltaTime;
+            time = TimeSpan.FromSeconds(currentTime);
+            FixFormat();
+            currentTimeText.text = minutes_text + ":" + seconds_text;
+        }
 
-	public void StopTimer()
-	{
-		timerActive = false;
-	}
+        if (alarmTimer.game_ended == true)
+        {
+            currentTimeText.text = "00:00";
+        }
+    }
 
-	public void FixFormat()
-	{
-		if (time.Minutes < 10)
-		{
-			minutes_text = "0" + time.Minutes.ToString();
-		}
-		else
-		{
-			minutes_text = time.Minutes.ToString();
-		}
-		if (time.Seconds < 10)
-		{
-			seconds_text = "0" + time.Seconds.ToString();
-		}
-		else
-		{
-			seconds_text = time.Seconds.ToString();
-		}
-	}
+    public void StartTimer()
+    {
+        timerActive = true;
+        alarmTimer.StartTimer();
+    }
+
+    public void StopTimer()
+    {
+        timerActive = false;
+    }
+
+    public void FixFormat()
+    {
+        if (time.Minutes < 10)
+        {
+            minutes_text = "0" + time.Minutes.ToString();
+        }
+        else
+        {
+            minutes_text = time.Minutes.ToString();
+        }
+        if (time.Seconds < 10)
+        {
+            seconds_text = "0" + time.Seconds.ToString();
+        }
+        else
+        {
+            seconds_text = time.Seconds.ToString();
+        }
+    }
 }
