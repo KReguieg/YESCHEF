@@ -65,7 +65,9 @@ public class SnappingLogic : NetworkBehaviour
 
     private void OnSnapped(SnapInteractable interactable)
     {
-        Debug.Log("Snapped");
+        Debug.Log("Snapped:" + state);
+        Debug.Log(">>>" + interactable.gameObject.name);
+        Debug.Log(">>>" + interactable.transform.parent.name);
         isSnapped = true;
         switch (state)
         {
@@ -81,10 +83,15 @@ public class SnappingLogic : NetworkBehaviour
                 break;
 
             case FoodState.FRIED:
+                Debug.Log(">>>" + interactable.gameObject.name);
+                Debug.Log(">>>" + interactable.transform.parent.name);
                 canBePlated = true;
                 break;
 
             case FoodState.PLATED:
+                Debug.Log(">>>" + interactable.transform.parent.name);
+                Debug.Log(">>>" + interactable.transform.parent.name);
+
                 canBeServed = true;
                 break;
 
