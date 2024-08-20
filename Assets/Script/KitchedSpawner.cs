@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KitchedSpawnerNew : NetworkBehaviour
+public class KitchedSpawner : NetworkBehaviour
 {
     [SerializeField] private GameObject ghostkitchenGamePre;
     [SerializeField] private GameObject kitchenGamePre;

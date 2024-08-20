@@ -15411,6 +15411,7 @@ MonoBehaviour:
   - {fileID: 4441274576100064902}
   NetworkedBehaviours:
   - {fileID: 8103566883890552272}
+  - {fileID: 8197867750455139534}
 --- !u!114 &8103566883890552272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16904,11 +16905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff37b4699ddd4a042aaab7da1c08da89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTransforms:
-  - {fileID: 5770960923913870591}
-  - {fileID: 2705470380462804624}
-  - {fileID: 5761192112474914259}
-  - {fileID: 2533080637105609017}
+  _ingredient: {fileID: 0}
+  _spawnedIngredients: []
 --- !u!1 &3677260983734917090
 GameObject:
   m_ObjectHideFlags: 0
@@ -28604,6 +28602,7 @@ MonoBehaviour:
   onFried:
     m_PersistentCalls:
       m_Calls: []
+  state: 0
   _Counter: 0
 --- !u!114 &4097260026361257881
 MonoBehaviour:
@@ -29168,6 +29167,7 @@ MonoBehaviour:
   onFried:
     m_PersistentCalls:
       m_Calls: []
+  state: 0
   _Counter: 0
 --- !u!114 &531599169697934048
 MonoBehaviour:
@@ -29493,6 +29493,7 @@ MonoBehaviour:
   onFried:
     m_PersistentCalls:
       m_Calls: []
+  state: 0
   _Counter: 0
 --- !u!114 &2987308260810395998
 MonoBehaviour:
@@ -35782,6 +35783,7 @@ MonoBehaviour:
   onFried:
     m_PersistentCalls:
       m_Calls: []
+  state: 0
   _Counter: 0
 --- !u!114 &7266655675337170617
 MonoBehaviour:

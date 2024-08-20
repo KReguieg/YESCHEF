@@ -8,7 +8,8 @@ using UnityEngine.Events;
 
 public class SnappingLogic : NetworkBehaviour
 {
-	private enum FoodState
+	[Serializable]
+	public enum FoodState
 	{
 		RAW = 0,
 		CHOPPED = 1,
@@ -26,7 +27,7 @@ public class SnappingLogic : NetworkBehaviour
 	public UnityEvent onChopped;
 	public UnityEvent onFried;
 
-	private FoodState state;
+	[SerializeField] private FoodState state;
 
 	[Networked]
 	[OnChangedRender(nameof(CounterChanged))]
@@ -37,14 +38,8 @@ public class SnappingLogic : NetworkBehaviour
 		var prevValue = GetPropertyReader<int>(nameof(Counter)).Read(previous);
 		Log.Info($"counter changed: {Counter}, prev: {prevValue}");
 
-		if (prevValue == 0 && Counter == 1)
-		{
-			ChangeFoodVisual(FoodState.CHOPPED);
-		}
-		if (prevValue == 1 && Counter == 2)
-		{
-			ChangeFoodVisual(FoodState.FRIED);
-		}
+		state = (FoodState)Counter;
+		ChangeFoodVisual(state);
 	}
 
 	private int count = 0;
@@ -58,7 +53,7 @@ public class SnappingLogic : NetworkBehaviour
 	{
 		snapInteractor.WhenInteractableSelected.Action += OnSnapped;
 		snapInteractor.WhenInteractableUnselected.Action += OnSnappedOff;
-		Counter = 0;
+		// Counter = 0;
 		state = FoodState.RAW;
 	}
 
@@ -80,6 +75,8 @@ public class SnappingLogic : NetworkBehaviour
 
 			case FoodState.CHOPPED:
 				canBeCooked = true;
+				Debug.Log(">>>" + interactable.gameObject.name);
+				Debug.Log(">>>" + interactable.transform.parent.name);
 				interactable.GetComponent<CookingTimer>().OnCookingFinished.AddListener(OnFinishedCooking);
 				break;
 
@@ -101,7 +98,7 @@ public class SnappingLogic : NetworkBehaviour
 		if (other.transform.CompareTag("Knife") && canBeChopped)
 			count++;
 
-		if (count == numberOfChops && state == FoodState.RAW)
+		if (count >= numberOfChops && state == FoodState.RAW)
 		{
 			OnFinishedChopped();
 		}
@@ -109,33 +106,35 @@ public class SnappingLogic : NetworkBehaviour
 
 	private void OnFinishedChopped()
 	{
-		state = FoodState.CHOPPED;
-		ChangeFoodVisual(state);
-		tagSet.tag = state.ToString();
+		// state = FoodState.CHOPPED;
+		// ChangeFoodVisual(state);
+		tagSet.InjectOptionalTags(new List<string>(){"CHOPPED"});
 		Counter++;
 		onChopped.Invoke();
+		canBeChopped = false;
 		Debug.Log("Chopping Done");
-		count = 0;
+		// count = 0;
 	}
 
 	private void OnFinishedCooking()
 	{
-		state = FoodState.FRIED;
-		ChangeFoodVisual(state);
+		// state = FoodState.FRIED;
+		// ChangeFoodVisual(state);
 		tagSet.tag = state.ToString();
 		Counter++;
 		onFried.Invoke();
+		canBeCooked = false;
 		Debug.Log("Frying Done");
 	}
 
 	private void ChangeFoodVisual(FoodState newState)
 	{
-		if (state == FoodState.RAW)
+		if (newState == FoodState.CHOPPED)
 		{
 			foodObjects[0].gameObject.SetActive(false);
 			foodObjects[1].gameObject.SetActive(true);
 		}
-		else if (state == FoodState.CHOPPED)
+		else if (newState == FoodState.FRIED)
 		{
 			foodObjects[1].gameObject.SetActive(false);
 			foodObjects[2].gameObject.SetActive(true);

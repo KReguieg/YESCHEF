@@ -7408,7 +7408,7 @@ MonoBehaviour:
   Colliders: 1
   CutHoles: 0
   castShadows: 1
-  hideMesh: 0
+  hideMesh: 1
   textureCoordinateModes:
   - WallU: 5
     WallV: 2
@@ -8473,7 +8473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghostkitchenGamePre: {fileID: 2019275392420158790, guid: cc6ece2165f829e4db7aab19a596e605, type: 3}
-  kitchenGamePre: {fileID: 2019275392420158790, guid: 52d0a7e4582ac0f4ca15dcbc83551d2b, type: 3}
+  kitchenGamePre: {fileID: 2019275392420158790, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
 --- !u!4 &762134314
 Transform:
   m_ObjectHideFlags: 0

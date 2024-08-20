@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Fusion;
+using Oculus.Interaction.OVR.Input;
 using UnityEngine;
 
 
@@ -7,17 +9,32 @@ public class IngredientSpawner : NetworkBehaviour
 {
     [SerializeField] private KitchenObjectScriptableObject _ingredient;
     [SerializeField] private List<NetworkObject> _spawnedIngredients;
+    private bool spawned = false;
 
-
-    public override void Spawned()
+    private void Update()
     {
-        if (HasStateAuthority)
+        if (OVRInput.Get(OVRInput.RawButton.B))
         {
-            base.Spawned();
-            Debug.Log("Ingredient Spawner started. Spawning Ingredients");
-            SpawnIngredient();
+            if (!spawned)
+            {
+                if (HasStateAuthority)
+                {
+                    SpawnIngredient();
+                    spawned = true;
+                }
+            }
         }
     }
+
+    // public override void Spawned()
+    // {
+    // if (HasStateAuthority)
+    // {
+    //     base.Spawned();
+    //     Debug.Log("Ingredient Spawner started. Spawning Ingredients");
+    //     SpawnIngredient();
+    // }
+    // }
 
     public void SpawnIngredient()
     {
