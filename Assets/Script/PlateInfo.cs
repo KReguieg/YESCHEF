@@ -20,10 +20,16 @@ public class PlateInfo : MonoBehaviour
     private void WhenSelectingInteractorAdded_Action1(SnapInteractor obj)
     {
         food2 = obj.transform.parent.tag;
+        obj.gameObject.transform.SetParent(this.transform, true);
+        obj.GetComponent<SnapInteractable>().enabled = false;
+        obj.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
     }
 
     private void WhenSelectingInteractorAdded_Action(SnapInteractor obj)
     {
         food1 = obj.transform.parent.tag;
+        obj.gameObject.transform.SetParent(this.transform, true);
+        obj.GetComponent<SnapInteractable>().enabled = false;
+        obj.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
     }
 }
