@@ -20,29 +20,35 @@ public class PlateInfo : NetworkBehaviour
 
     private void WhenSelectingInteractorAdded_Action(SnapInteractor obj)
     {
-        RPC_DisableFunctionality1(obj.GetComponentInParent<NetworkObject>());
+        var networkObject = obj.GetComponentInParent<NetworkObject>();
+        Debug.Log( "WhenSelectingInteractorAdded_Action " +networkObject );
+        RPC_DisableFunctionality1(networkObject);
     }
 
     private void WhenSelectingInteractorAdded_Action1(SnapInteractor obj)
     {
-        RPC_DisableFunctionality2(obj.GetComponentInParent<NetworkObject>());
+        var networkObject = obj.GetComponentInParent<NetworkObject>();
+        Debug.Log( "WhenSelectingInteractorAdded_Action " +networkObject );
+        RPC_DisableFunctionality2(networkObject);
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void RPC_DisableFunctionality1(NetworkObject networkObject)
     {
-        food1 = networkObject.transform.parent.tag;
+        Debug.Log( "RPC_DisableFunctionality1 " +networkObject );
+        food1 = networkObject.transform.tag;
         networkObject.gameObject.transform.SetParent(this.transform, true);
-        networkObject.GetComponent<SnapInteractor>().enabled = false;
-        networkObject.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
+        networkObject.GetComponentInChildren<SnapInteractor>().enabled = false;
+        networkObject.transform.GetComponentInChildren<Grabbable>().enabled = false;
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void RPC_DisableFunctionality2(NetworkObject networkObject)
     {
-        food2 = networkObject.transform.parent.tag;
+        Debug.Log( "RPC_DisableFunctionality2 " +networkObject );
+        food2 = networkObject.transform.tag;
         networkObject.gameObject.transform.SetParent(this.transform, true);
-        networkObject.GetComponent<SnapInteractor>().enabled = false;
-        networkObject.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
+        networkObject.GetComponentInChildren<SnapInteractor>().enabled = false;
+        networkObject.transform.GetComponentInChildren<Grabbable>().enabled = false;
     }
 }

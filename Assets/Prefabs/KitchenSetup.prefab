@@ -15539,6 +15539,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 5505942047454415195}
   - {fileID: 8127720386559061885}
+  - {fileID: 6549113763713631964}
   - {fileID: 3681310283256389102}
   - {fileID: 6732980188928177522}
 --- !u!114 &5505942047454415195
@@ -17209,6 +17210,7 @@ MonoBehaviour:
   startSeconds: 0
   currentTimeText: {fileID: 8109672665090361200}
   alarmTimer: {fileID: 2197303223072654741}
+  audioTriggerMusic: {fileID: 0}
 --- !u!1 &4119753777845995172
 GameObject:
   m_ObjectHideFlags: 0

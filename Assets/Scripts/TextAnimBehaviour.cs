@@ -6,6 +6,7 @@ using TMPro;
 public class TextAnimBehaviour : MonoBehaviour
 {
 	public List<TextElements> text_anim_elements;
+	private bool scoreAdded = false;
 
 	[System.Serializable]
 	public class TextElements
@@ -25,5 +26,10 @@ public class TextAnimBehaviour : MonoBehaviour
 		//destroy after 1.5 sec
 		Destroy(exhale_text, 1.5f);
 		Destroy(gameObject, 2.0f);
+		if (!scoreAdded)
+		{
+			ScoreBehaviour.Instance.ExecuteAddScoreRPC();
+			scoreAdded = true;
+		}
 	}
 }
