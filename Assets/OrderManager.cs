@@ -4,7 +4,6 @@ using Fusion;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-
 public class OrderManager : NetworkBehaviour
 {
     [SerializeField] private OrderRecipeScriptableObject[] _possibleOrders;
@@ -17,6 +16,7 @@ public class OrderManager : NetworkBehaviour
     public bool spawned = false;
     public bool hasStateAuthority;
 
+    public List<NetworkObject> Orders { get => _orders; }
 
     public override void Spawned()
     {

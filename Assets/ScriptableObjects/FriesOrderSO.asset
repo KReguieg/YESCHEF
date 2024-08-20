@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2b243b5ff809d54593d1068e25cf47a, type: 3}
-  m_Name: ChickenOrderSO
+  m_Name: FriesOrderSO
   m_EditorClassIdentifier: 
   order:
-  - {fileID: 11400000, guid: c6c2425f184414044ae3d3b03677b2ad, type: 2}
+  - {fileID: 11400000, guid: 5766bf8e744d98d46882cfedd4f1c3d5, type: 2}
