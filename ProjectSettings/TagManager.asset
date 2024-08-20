@@ -8,6 +8,7 @@ TagManager:
   - Knife
   - Chicken
   - Potato
+  - Cut
   layers:
   - Default
   - TransparentFX
