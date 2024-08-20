@@ -36,7 +36,6 @@ public class AlarmTimer : MonoBehaviour
 		if (timer >= time_to_rotate_in_seconds)
 		{
 			StopTimer();
-			scoreBehaviour.AddScore();
 			scoreBehaviour.StopScore();
 			transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
 		}
