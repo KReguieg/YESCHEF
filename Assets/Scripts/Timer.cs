@@ -34,7 +34,7 @@ public class Timer : NetworkBehaviour
 	public AlarmTimer alarmTimer;
 	private AudioTrigger audioTrigger;
 	public AudioTrigger audioTriggerMusic;
-	private AudioSource audioSource;
+	public AudioSource audioSource;
 
 	private void Start()
 	{
@@ -48,7 +48,6 @@ public class Timer : NetworkBehaviour
 		FixFormat();
 		currentTimeText.text = minutes_text + ":" + seconds_text;
 		audioTrigger = GetComponent<AudioTrigger>();
-		audioSource = audioTriggerMusic.GetComponent<AudioSource>();
 	}
 
 	private void Update()

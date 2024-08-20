@@ -23474,6 +23474,10 @@ PrefabInstance:
       propertyPath: SortKey
       value: 4274856153
       objectReference: {fileID: 0}
+    - target: {fileID: 1815525751221227443, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 767527897}
     - target: {fileID: 2019275392420158790, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
       propertyPath: m_Name
       value: KitchenSetup
@@ -23482,6 +23486,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.464
       objectReference: {fileID: 0}
+    - target: {fileID: 2197303223072654741, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 207866558}
     - target: {fileID: 3098984510948253731, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -23542,6 +23550,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 161900988}
+    - target: {fileID: 8127720386559061885, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2051284158}
+    - target: {fileID: 8127720386559061885, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
+      propertyPath: audioTriggerMusic
+      value: 
+      objectReference: {fileID: 2051284157}
     - target: {fileID: 9181350089452011996, guid: 72efe09244445c74d8337396e4ba8bb0, type: 3}
       propertyPath: SortKey
       value: 1817755910

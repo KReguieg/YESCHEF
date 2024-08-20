@@ -13,7 +13,7 @@ public class AlarmTimer : MonoBehaviour
 	public ParticleSystem particle;
 	public ScoreBehaviour scoreBehaviour;
 	private AudioTrigger audioTrigger;
-	private AudioSource audioSource;
+	public AudioSource audioSource;
 
 	// Start is called before the first frame update
 	private void Start()
@@ -23,7 +23,6 @@ public class AlarmTimer : MonoBehaviour
 		game_ended = false;
 		step_angle = angle_to_rotate / time_to_rotate_in_seconds;
 		timer = 0;
-		audioSource = audioTrigger.GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame

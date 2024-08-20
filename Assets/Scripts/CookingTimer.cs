@@ -13,7 +13,7 @@ public class CookingTimer : MonoBehaviour
 	[SerializeField] private SnapInteractable snapInteractable;
 	public UnityEvent OnCookingFinished;
 	private AudioTrigger audioTrigger;
-	private AudioSource audioSource;
+	public AudioSource audioSource;
 
 	private void OnEnable()
 	{
@@ -31,10 +31,8 @@ public class CookingTimer : MonoBehaviour
 		cookingInterval = 3f;
 		audioTrigger = GetComponent<AudioTrigger>();
 
-		audioSource = audioTrigger.GetComponent<AudioSource>();
-		audioSource.pitch = 0f;
-
 		audioTrigger.PlayAudio();
+		audioSource.pitch = 0f;
 	}
 
 	private void Update()
