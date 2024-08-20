@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 7865855196927778331}
   m_Layer: 0
   m_Name: Chicken_Final
-  m_TagString: Untagged
+  m_TagString: Chicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 3735153141
   ObjectInterest: 1
-  Flags: 524289
+  Flags: 786433
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4352124992164972369}

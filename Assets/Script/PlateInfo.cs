@@ -1,9 +1,10 @@
+using Fusion;
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateInfo : MonoBehaviour
+public class PlateInfo : NetworkBehaviour
 {
     [SerializeField] private SnapInteractable item1;
     [SerializeField] private SnapInteractable item2;
@@ -17,19 +18,31 @@ public class PlateInfo : MonoBehaviour
         item2.WhenSelectingInteractorAdded.Action += WhenSelectingInteractorAdded_Action1;
     }
 
-    private void WhenSelectingInteractorAdded_Action1(SnapInteractor obj)
-    {
-        food2 = obj.transform.parent.tag;
-        obj.gameObject.transform.SetParent(this.transform, true);
-        obj.GetComponent<SnapInteractable>().enabled = false;
-        obj.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
-    }
-
     private void WhenSelectingInteractorAdded_Action(SnapInteractor obj)
     {
-        food1 = obj.transform.parent.tag;
-        obj.gameObject.transform.SetParent(this.transform, true);
-        obj.GetComponent<SnapInteractable>().enabled = false;
-        obj.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
+        RPC_DisableFunctionality1(obj.GetComponentInParent<NetworkObject>());
+    }
+
+    private void WhenSelectingInteractorAdded_Action1(SnapInteractor obj)
+    {
+        RPC_DisableFunctionality2(obj.GetComponentInParent<NetworkObject>());
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_DisableFunctionality1(NetworkObject networkObject)
+    {
+        food1 = networkObject.transform.parent.tag;
+        networkObject.gameObject.transform.SetParent(this.transform, true);
+        networkObject.GetComponent<SnapInteractor>().enabled = false;
+        networkObject.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_DisableFunctionality2(NetworkObject networkObject)
+    {
+        food2 = networkObject.transform.parent.tag;
+        networkObject.gameObject.transform.SetParent(this.transform, true);
+        networkObject.GetComponent<SnapInteractor>().enabled = false;
+        networkObject.transform.parent.GetComponentInChildren<Grabbable>().enabled = false;
     }
 }

@@ -31,7 +31,7 @@ public class CheckOrders : MonoBehaviour
         orderString1 = plateInfo.food1 + "\n" + plateInfo.food2;
         orderString2 = plateInfo.food2 + "\n" + plateInfo.food1;
 
-        Debug.Log("<<< order" + orderString1);
+        Debug.Log("<<< order 1" + orderString1);
         Debug.Log("<<<< order 2 " + orderString2);
         CheckFromManager();
     }

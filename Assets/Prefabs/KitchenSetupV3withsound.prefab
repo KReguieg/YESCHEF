@@ -41518,6 +41518,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderManager: {fileID: 1024068428464223217}
   snapInteractable: {fileID: 5785657392839907755}
+  onRightOrder:
+    m_PersistentCalls:
+      m_Calls: []
+  onWrongOrder:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5821368835790328525
 GameObject:
   m_ObjectHideFlags: 0
@@ -43138,9 +43144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06bd28341d3e86a4c8ab52b1a0269c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactorFilters: []
-  _maxInteractors: 2
-  _maxSelectingInteractors: 1
+  _interactorFilters:
+  - {fileID: 2494631799251754450}
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _rigidbody: {fileID: 9109840479713208520}
   _snapPoseDelegate: {fileID: 0}
